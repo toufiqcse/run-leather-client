@@ -18,9 +18,6 @@ const ProductCard = ({ datas }) => {
         slidesPerView={2}
         spaceBetween={10}
         navigation={true}
-        pagination={{
-          clickable: false,
-        }}
         breakpoints={{
           640: {
             slidesPerView: 2,
