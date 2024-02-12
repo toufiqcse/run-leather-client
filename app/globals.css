@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer components {
+  .tor li {
+    @apply flex border p-1 border-r-slate-600 border-l-transparent border-t-transparent border-b-transparent text-[12px] font-bold hover:text-red-600;
+  }
+  .title,
+  .price {
+    @apply ml-4 font-bold my-1;
+  }
+  .apes {
+    @apply text-[11px];
+  }
+  .links button {
+    @apply bg-orange-500 text-white text-center text-lg;
+  }
+}
+
+.nav_list {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin: 10px 0px !important;
+}
+
+/* YourCarouselComponent.css */
+.thumb-arrow {
+  position: absolute;
+  top: 50%;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.thumb-prev {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.thumb-next {
+  right: 0;
+  transform: translateY(-50%);
+}
+.dropdown-content-small {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #333;
+  padding: 8px;
+  transition: display 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.dropdown-content-small.active {
+  display: block;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
