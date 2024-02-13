@@ -1,7 +1,7 @@
 import Link from "next/link";
 import BreadCrumb from "../components/global/BreadCrumbs";
 
-const Registration = () => {
+export default function Registration() {
   return (
     <>
       <BreadCrumb category_name="Registration" />
@@ -93,6 +93,4 @@ const Registration = () => {
       </div>
     </>
   );
-};
-
-export default Registration;
+}

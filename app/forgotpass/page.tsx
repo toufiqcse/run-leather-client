@@ -1,4 +1,4 @@
-const ForgotPassword = () => {
+export default function ForgotPassword() {
   return (
     <div className="bg-gray-100 flex items-center justify-center my-5">
       <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
@@ -42,6 +42,4 @@ const ForgotPassword = () => {
       </div>
     </div>
   );
-};
-
-export default ForgotPassword;
+}

@@ -11,7 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "swiper/modules";
 
-const ProductCariusel = ({ datas }) => {
+const ProductCariusel = ({ datas }: { datas: any }) => {
   return (
     <>
       <Swiper

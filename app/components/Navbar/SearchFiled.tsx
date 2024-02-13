@@ -1,4 +1,4 @@
-const SearchFiled = ({ handleClose }) => {
+const SearchFiled = ({ handleClose }: { handleClose: any }) => {
   return (
     <div
       class="relative z-10"

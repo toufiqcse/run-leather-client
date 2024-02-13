@@ -2,7 +2,13 @@ import { dashboardLink } from "@/app/global_links/global";
 import Link from "next/link";
 import UserInfo from "../userinfo/page";
 
-const Sidebar = ({ show, onClose }) => {
+export default function Sidebar({
+  show,
+  onClose,
+}: {
+  show: any;
+  onClose: any;
+}) {
   return (
     <>
       <div className="border border-[#bbb] rounded-lg px-3 py-2 hidden md:block">
@@ -61,6 +67,4 @@ const Sidebar = ({ show, onClose }) => {
       )}
     </>
   );
-};
-
-export default Sidebar;
+}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const UserInfo = ({ show }) => {
+export default function UserInfo({ show }) {
   return (
     <div className="flex flex-col justify-center items-center">
       <Image
@@ -29,6 +29,4 @@ const UserInfo = ({ show }) => {
       </>
     </div>
   );
-};
-
-export default UserInfo;
+}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import BreadCrumb from "../components/global/BreadCrumbs";
 
-const Login = () => {
+export default function Login() {
   const route = useRouter();
 
   const onSubmit = (e) => {
@@ -83,6 +83,4 @@ const Login = () => {
       </div>
     </>
   );
-};
-
-export default Login;
+}
