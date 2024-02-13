@@ -1,11 +1,5 @@
 import Link from "next/link";
-const BreadCrumb = ({
-  category_name,
-  category,
-}: {
-  category_name: string;
-  category?: string;
-}) => {
+const BreadCrumb = ({ category_name, category }) => {
   return (
     <div className="container mx-auto px-3 md:px-0">
       <div className="text-sm breadcrumbs  ">

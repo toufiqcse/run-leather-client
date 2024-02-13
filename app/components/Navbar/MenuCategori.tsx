@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { MdArrowDropDown } from "react-icons/md";
-import DropDownLink from "./DropDownLink";
-
-const MenuCategori = ({ cat }) => {
+export default function MenuCategori({ cat }) {
   const dropDownMenu = cat.dropdown;
 
   return (
@@ -17,10 +15,28 @@ const MenuCategori = ({ cat }) => {
           <MdArrowDropDown size={30} />
         </span>
       </Link>
-
-      <DropDownLink dropDownMenu={dropDownMenu} />
+      <>
+        <div
+          tabIndex={0}
+          className="dropdown-content z-[1] menu px-4 py-2 text-black bg-white shadow-md  w-52 mt-8 border border-[#eee] transition duration-500"
+        >
+          <>
+            {dropDownMenu.map((dropdown) => (
+              <div key={dropdown.id}>
+                <div className="flex flex-col items-start mb-2">
+                  <Link
+                    href={`${dropdown?.href}`}
+                    className="text-[#666666] hover:text-[#c30909]"
+                  >
+                    {dropdown.name}
+                  </Link>
+                </div>
+                <hr />
+              </div>
+            ))}
+          </>
+        </div>
+      </>
     </div>
   );
-};
-
-export default MenuCategori;
+}

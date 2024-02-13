@@ -13,8 +13,8 @@ import { FaArrowsRotate } from "react-icons/fa6";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const ProductDisplay = (datas: any) => {
-  const rec_data: any = Object.values(datas)[1];
+const ProductDisplay = (datas) => {
+  const rec_data = Object.values(datas)[1];
 
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);

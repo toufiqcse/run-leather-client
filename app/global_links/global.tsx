@@ -3,14 +3,6 @@ import { FaTruck } from "react-icons/fa6";
 import { IoNewspaper } from "react-icons/io5";
 import { MdDashboard, MdOutlineContactSupport } from "react-icons/md";
 
-export interface ShopCategory {
-  name?: string;
-  price?: number;
-  dis_price?: number;
-  id?: number;
-  img: string;
-}
-
 export const dashboardLink = [
   {
     id: crypto.randomUUID(),
@@ -111,7 +103,13 @@ export const categories = [
     id: crypto.randomUUID(),
     title: "Oxford Shoe",
     href: "oxfordshoe",
-    dropdown: [],
+    dropdown: [
+      {
+        id: crypto.randomUUID(),
+        name: "Indian",
+        href: "#",
+      },
+    ],
   },
   {
     id: crypto.randomUUID(),

@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-const ProductDisplay = (datas: any) => {
+const ProductDisplay = ({ datas }) => {
   const rec_data = Object.values(datas);
   return (
     <div className="container mx-auto  md:px-0">
       <div className="grid md:grid-cols-6 grid-cols-2 gap-2 my-5">
-        {rec_data.map((data: any) => (
+        {rec_data.map((data) => (
           <div key={data.id} className=" px-3 w-full">
             <Link href={`/category/${data?.url}`}>
               <div className="img w-full">

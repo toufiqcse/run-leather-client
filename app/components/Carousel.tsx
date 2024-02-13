@@ -35,7 +35,7 @@ const BrandCarousel = () => {
           showStatus={false}
           dynamicHeight={false}
         >
-          {carousel_images.map((item: any) => (
+          {carousel_images.map((item) => (
             <div key={item.img} className="z-0">
               <img
                 className="carousel-image max-w-full z-0"
