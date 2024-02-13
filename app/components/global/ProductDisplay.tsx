@@ -2,8 +2,8 @@ import Link from "next/link";
 const ProductDisplay = (datas: any) => {
   const rec_data = Object.values(datas);
   return (
-    <>
-      <div className="grid md:grid-cols-6 grid-cols-2 gap-4 my-5">
+    <div className="container mx-auto  md:px-0">
+      <div className="grid md:grid-cols-6 grid-cols-2 gap-2 my-5">
         {rec_data.map((data: any) => (
           <div key={data.id} className=" px-3">
             <Link href={`/category/${data?.url}`}>
@@ -17,14 +17,14 @@ const ProductDisplay = (datas: any) => {
                 <span className="line-through text-black">৳{data.price}</span>{" "}
                 &nbsp; <span className="text-red-600">৳{data.dis_price}</span>
               </div>
-              <div className="link w-full py-1 bg-orange-500 text-[18px] text-white text-center">
-                <button>{"Add to Cart"}</button>
+              <div className="link w-full bg-orange-500 px-2 py-1 text-white text-center">
+                <button>{"অর্ডার করুন"}</button>
               </div>
             </Link>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 export default ProductDisplay;
