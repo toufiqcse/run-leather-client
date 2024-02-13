@@ -1,8 +1,4 @@
 import type { Metadata } from "next";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/swiper-bundle.css";
 import Dropdowns from "./components/Dropdown";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/global/Footer";

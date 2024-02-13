@@ -48,32 +48,36 @@ const GlobalHero = ({
             spaceBetween={10}
             navigation={true}
             breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
               640: {
                 slidesPerView: 2,
-                spaceBetween: 20,
+                spaceBetween: 10,
               },
               768: {
                 slidesPerView: 4,
-                spaceBetween: 40,
+                spaceBetween: 10,
               },
               1024: {
                 slidesPerView: 5,
-                spaceBetween: 50,
+                spaceBetween: 10,
               },
             }}
             modules={[Navigation]}
-            className="mySwiper flex"
+            className="mySwiper flex "
           >
             {datas.map((data) => (
-              <SwiperSlide key={data.id}>
-                <div className="flex justify-between items-center">
+              <SwiperSlide key={data.id} className="w-full">
+                <div className="w-full">
                   <Link href={`category/${data.name?.toLowerCase()}`}>
                     <Image
                       width={100}
                       height={100}
                       loading="lazy"
                       src={data.img}
-                      className=""
+                      className="w-full"
                       alt={`Product ${data.id}`}
                     />
                   </Link>

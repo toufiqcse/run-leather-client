@@ -15,21 +15,25 @@ const ProductCard = ({ datas }) => {
   return (
     <>
       <Swiper
-        // slidesPerView={4}
+        slidesPerView={2}
         spaceBetween={10}
         navigation={true}
         breakpoints={{
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
           640: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 10,
           },
           768: {
             slidesPerView: 4,
-            spaceBetween: 40,
+            spaceBetween: 10,
           },
           1024: {
             slidesPerView: 5,
-            spaceBetween: 50,
+            spaceBetween: 10,
           },
         }}
         modules={[Navigation]}
@@ -37,17 +41,15 @@ const ProductCard = ({ datas }) => {
       >
         {datas.map((data) => (
           <SwiperSlide key={data.id}>
-            <div className="  mx-1 bg-slate-50">
+            <div className=" w-full  bg-slate-50">
               <Link href={`product/${data.name}`}>
-                <>
-                  <Image
-                    width={100}
-                    height={100}
-                    src={data.img}
-                    className=""
-                    alt={data.name}
-                  />
-                </>
+                <Image
+                  width={100}
+                  height={90}
+                  src={data.img}
+                  className="max-w-full"
+                  alt={data.name}
+                />
                 <div className="title text-sm text-black hover:text-red-500">
                   <span>{data.name}</span>
                 </div>

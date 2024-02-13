@@ -9,11 +9,6 @@ import {
   wallet,
 } from "./global_links/global";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/swiper-bundle.css";
-
 export default function Home() {
   return (
     <>
