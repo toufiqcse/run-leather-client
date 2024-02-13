@@ -1,21 +1,21 @@
 "use client";
 import Link from "next/link";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "./product.css";
 
 // import required modules
+import Image from "next/image";
 import { Navigation } from "swiper/modules";
-
 const ProductCard = ({ datas }) => {
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        // slidesPerView={4}
         spaceBetween={10}
         navigation={true}
         breakpoints={{
@@ -35,13 +35,19 @@ const ProductCard = ({ datas }) => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {datas.map((data, i) => (
-          <SwiperSlide key={i}>
+        {datas.map((data) => (
+          <SwiperSlide key={data.id}>
             <div className="  mx-1 bg-slate-50">
               <Link href={`product/${data.name}`}>
-                <div className="img">
-                  <img src={data.img} className="" alt={data.name} />
-                </div>
+                <>
+                  <Image
+                    width={100}
+                    height={100}
+                    src={data.img}
+                    className=""
+                    alt={data.name}
+                  />
+                </>
                 <div className="title text-sm text-black hover:text-red-500">
                   <span>{data.name}</span>
                 </div>

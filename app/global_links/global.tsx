@@ -10,6 +10,7 @@ export interface ShopCategory {
   id?: number;
   img: string;
 }
+
 export const dashboardLink = [
   {
     id: crypto.randomUUID(),

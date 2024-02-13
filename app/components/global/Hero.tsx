@@ -1,6 +1,19 @@
+"use client";
 import { ShopCategory } from "@/app/global_links/global";
-import ProductCariusel from "../Carousel/ProductCariusel";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import Image from "next/image";
+import Link from "next/link";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation } from "swiper/modules";
+import "swiper/swiper-bundle.css";
 import ProductCard from "./ProductCard";
+// import required modules
+import "./product.css";
 const GlobalHero = ({
   title,
   datas,
@@ -8,10 +21,13 @@ const GlobalHero = ({
   title: string;
   datas: Array<ShopCategory>;
 }) => {
+  console.log(title);
+  console.log(datas);
+
   return (
     <>
       <div
-        className={`  ${
+        className={`${
           title == "Shop by Category"
             ? "text-center text-orange-500"
             : " text-black dark:text-white"
@@ -27,11 +43,49 @@ const GlobalHero = ({
 
       {title == "Shop by Category" ? (
         <div className="flex justify-between items-center">
-          <ProductCariusel datas={datas} />
+          <Swiper
+            slidesPerView={2}
+            spaceBetween={10}
+            navigation={true}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+              },
+            }}
+            modules={[Navigation]}
+            className="mySwiper flex"
+          >
+            {datas.map((data) => (
+              <SwiperSlide key={data.id}>
+                <div className="flex justify-between items-center">
+                  <Link href={`category/${data.name?.toLowerCase()}`}>
+                    <Image
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      src={data.img}
+                      className=""
+                      alt={`Product ${data.id}`}
+                    />
+                  </Link>
+                </div>
+              </SwiperSlide>
+            ))}
+            {console.log("after map", datas)}
+          </Swiper>
         </div>
       ) : (
         <>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center h-full">
             <ProductCard datas={datas} />
           </div>
         </>

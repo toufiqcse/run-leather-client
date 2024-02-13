@@ -1,5 +1,4 @@
 "use client";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -7,8 +6,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/swiper-bundle.css";
-
 // import required modules
+import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "swiper/modules";
 
@@ -16,15 +15,9 @@ const ProductCariusel = ({ datas }) => {
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        // slidesPerView={2}
         spaceBetween={10}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        pagination={{
-          clickable: false,
-        }}
+        navigation={true}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -46,8 +39,16 @@ const ProductCariusel = ({ datas }) => {
           <SwiperSlide key={data.id}>
             <div className="flex justify-between items-center">
               <Link href={`category/${data.name?.toLowerCase()}`}>
-                <img src={data.img} className="" alt={`Product ${data.id}`} />
+                <Image
+                  width={10}
+                  height={10}
+                  loading="lazy"
+                  src={data.img}
+                  className=""
+                  alt={`Product ${data.id}`}
+                />
               </Link>
+              {console.log(data)}
             </div>
           </SwiperSlide>
         ))}
