@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 const ProductDisplay = (datas: any) => {
   const rec_data = Object.values(datas);
@@ -5,10 +6,16 @@ const ProductDisplay = (datas: any) => {
     <div className="container mx-auto  md:px-0">
       <div className="grid md:grid-cols-6 grid-cols-2 gap-2 my-5">
         {rec_data.map((data: any) => (
-          <div key={data.id} className=" px-3">
+          <div key={data.id} className=" px-3 w-full">
             <Link href={`/category/${data?.url}`}>
-              <div className="img">
-                <img src={data.img} className="" alt={data.name} />
+              <div className="img w-full">
+                <Image
+                  width={100}
+                  height={100}
+                  src={data.img}
+                  className="w-full"
+                  alt={data.name}
+                />
               </div>
               <div className="title text-sm text-black hover:text-red-500">
                 <span>{data.name}</span>
