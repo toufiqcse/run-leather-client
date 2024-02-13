@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FaShoppingBag } from "react-icons/fa";
 import BreadCrumb from "../components/global/BreadCrumbs";
-import Sidebar from "./sidebar/page";
+import { Sidebar } from "./sidebar/page";
 
 const Dashboard = () => {
   const [showSidebar, setShowSidebar] = useState(false);
